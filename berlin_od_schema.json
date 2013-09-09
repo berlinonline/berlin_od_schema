@@ -16,63 +16,52 @@
   ],
   "properties": {
     "title": {
-      "required": true, 
       "description": "Titel: Der Titel beschreibt den Datensatz, das Dokument oder die App prägnant und wird z. B. in Suchergebnissen und Listen angezeigt.",
       "type": "string"
     }, 
     "name": {
-      "required": true, 
       "description": "Name: Ein für Menschen lesbarer Bezeichner des Datensatzes, des Dokuments oder der Apps, der für eine Identifizierung genutzt werden kann (einfache ASCII-Präsentation des Titels, auch für die Pretty-Link-URL, Linked Data URIs)",
       "pattern": "^[a-z0-9_-]{2,}$", 
       "type": "string"
     }, 
     "type": {
-      "required": true, 
       "description": "Typ: Zeigt an, ob ein Datensatz, ein Dokument, eine App beschrieben wird. Entscheidet darüber, in welchem Bereich diese Metadaten angezeigt werden.", 
       "type": "string", 
       "enum": ["datensatz", "dokument", "app"]
     }, 
     "author": {
-      "required": true, 
       "description": "Veröffentlichende Stelle: Die Behörde, von der die Daten stammen. Bei Apps der App-Hersteller.",
       "type": "string"
     }, 
     "author_email": {
-      "required": true, 
       "description": "Veröffentlichende Stelle Email: Email-Adresse oder Kontaktformular der Veröffentlichenden Stelle.",
       "format": "uri",
       "type": "string"
     }, 
     "maintainer": {
-      "required": false, 
       "description": "Datenverantwortliche Stelle: Dieser Ansprechpartner kann bei Fragen und Anmerkungen zu den Daten kontaktiert werden.",
       "type": "string"
     }, 
     "maintainer_email": {
-      "required": false, 
       "description": "Datenverantwortliche Stelle Email: Email-Adresse oder Kontaktformular der Datenverantwortlichen Stelle.",
       "format": "uri",
       "type": "string"
     }, 
     "url": {
-      "required": false, 
       "description": "Website: Die ursprüngliche Webadresse des Datensatzes, Dokuments oder der App, um zu weiteren Informationen über den Datensatz, das Dokument oder die App zu gelangen. Wird auf der Detailseite als Link angezeigt.", 
       "type": "string", 
       "format": "uri"
     }, 
     "notes": {
-      "required": true, 
       "description": "Beschreibung: Beschreibung und weitere Informationen zum Datensatz, zum Dokument oder zur App, wird auf der Detailseite dargestellt und kann mehrere Absätze umfassen.",
       "type": "string"
     },
     "license_id": {
       "enum": ["cc-by", "cc-by-sa", "cc-nc", "other-closed", "geonutzv"], 
       "type": "string", 
-      "required": true, 
       "description": "Lizenz-ID: Lizenz aus einer festen Liste, s.u. bzw. <a href='http://datenregister.berlin.de/licenses/berlin-od-portal.json'>http://datenregister.berlin.de/licenses/berlin-od-portal.json</a>"
     },
     "groups": {
-      "required": true, 
       "description": "Kategorien: Kategorien für die Datensätze und Dokumente. Die Kategorien sind statisch und werden vom Portalbetreiber langfristig gepflegt.",
       "type": "array",
       "items": {
@@ -107,37 +96,70 @@
       } 
     },
     "tags": {
-      "required": false, 
       "description": "Schlagwörter: Freie Schlüsselwörter des Datensatzes, des Dokuments oder der App",
       "type": "array",
       "items": {
         "type": "string"
       }
     },
+    "resources": {
+      "description": "Ressourcen: Folgende Felder können für jede Ressource individuell angegeben werden.",
+      "type": "array", 
+      "items": {
+        "type": "object",
+        "required": [
+          "url",
+          "format"
+        ],
+        "properties": {
+          "url": {
+            "description": "URL: Verweis auf die eigentliche Datendatei, das Dokument oder die Anwendung.", 
+            "type": "string", 
+            "format": "uri"
+          },
+          "format": {
+            "description": "Format: Typ der Ressource (MIME Types)",
+            "type": "string"
+          },
+          "description": {
+            "description": "Beschreibung: Erläuterung, welche Rolle die Ressource für den Datensatz, das Dokument bzw. die App spielt (z. B. ob es sich dabei um eine bestimmte Zeitscheibe oder Schlüsselliste handelt. Der Beschreibungstext, wird mit dem Link zur Ressource unterlegt.)",
+            "type": "string"
+          }, 
+          "language": {
+            "description": "Sprache: Sprache als ISO 639-1-Code, in der die Ressource verfasst ist.",
+            "pattern": "^[a-z]{2}$", 
+            "type": "string"
+          }, 
+          "hash": {
+            "description": "Prüfsumme: Bei statischen Dateien die SHA2-Prüfsumme bzw. bei dynamischen Daten ein Zertifikat zur Überprüfung der Integrität.",
+            "type": "string"
+          } 
+        }
+      } 
+    },
     "extras": {
-      "required": true, 
-      "type": "object", 
+      "type": "object",
+      "required": [
+        "date_released",
+        "date_updated"
+      ],
       "description": "Extras: Zusaetzliche Angaben, die über das Standard CKAN Schema hinausgehen.", 
       "properties": {
         "username": {
-          "required": false,
           "description": "Veröffentlichende Person: Person, die lediglich für Veröffentlichung zuständig ist.",
           "type": "string"
         },
         "date_released": {
-          "required": "true",
           "description": "Veröffentlichungsdatum: Wann wurden dieser Datensatz erstmalig angelegt/erzeugt? Wichtig: dies beschreibt nicht zwingend den Zeitpunkt, an dem der Datensatz in das Datenregister eingepflegt wurde, sondern kann auch davor liegen.",
           "type": "string", 
           "format": "date-time"
         },
         "date_updated": {
-          "required": "true",
           "description": "Änderungsgsdatum: Wann wurden dieser Datensatz geändert? Wichtig: dies beschreibt nicht zwingend den Zeitpunkt, an dem die geänderten Daten in das Datenregister eingepflegt wurde, sondern kann auch davor liegen.",
           "type": "string", 
           "format": "date-time"
         },
         "geographical_granularity": {
-          "required": false, 
           "description": "Räumliche Auflösung: Die geographische Granularität des Datensatzes, eines Dokuments, einer App. Wird später zum Filtern verwendet.", 
           "enum": [
             "Deutschland",
@@ -159,7 +181,6 @@
           "type": "string"
         },
         "geographical_coverage": {
-          "required": false,
           "description": "Räumliche Abdeckung: der geographische Bereich, der von dem Datensatz, dem Dokument oder der App abgedeckt wird. Wird zum Filtern verwendet.",
           "enum": [
             "Adlershof",
@@ -257,19 +278,16 @@
           "type": "string"
         },
         "temporal_coverage_from": {
-          "required": false, 
           "description": "Start-Datum: Der Zeitpunkt, von dem an der Datensatz, das Dokument oder die App einschließlich Daten enthält. Wird insb. zum Filtern verwendet.", 
           "type": "string", 
           "format": "date-time"
         }, 
         "temporal_coverage_to": {
-          "required": false, 
           "description": "End-Datum: Der Zeitpunkt, bis zu dem der Datensatz, das Dokument oder die App einschließlich Daten enthält. Wird insb. zum Filtern verwendet.", 
           "type": "string", 
           "format": "date-time"
         }, 
         "temporal_granularity": {
-          "required": false, 
           "description": "Zeitliche Auflösung: Die zeitliche Auflösung der enthaltenen Daten, des Dokuments oder der App. Wird später zum Filtern verwendet.", 
           "type": "string", 
           "enum": [
