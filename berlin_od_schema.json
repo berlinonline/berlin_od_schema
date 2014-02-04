@@ -99,7 +99,8 @@
       "description": "Schlagwörter: Freie Schlüsselwörter des Datensatzes, des Dokuments oder der App",
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "pattern": "^*$"
       }
     },
     "resources": {
@@ -277,12 +278,12 @@
           ],
           "type": "string"
         },
-        "temporal_coverage_from": {
+        "temporal_coverage-from": {
           "description": "Start-Datum: Der Zeitpunkt, von dem an der Datensatz, das Dokument oder die App einschließlich Daten enthält. Wird insb. zum Filtern verwendet.", 
           "type": "string", 
           "format": "date-time"
         }, 
-        "temporal_coverage_to": {
+        "temporal_coverage-to": {
           "description": "End-Datum: Der Zeitpunkt, bis zu dem der Datensatz, das Dokument oder die App einschließlich Daten enthält. Wird insb. zum Filtern verwendet.", 
           "type": "string", 
           "format": "date-time"
@@ -302,6 +303,10 @@
             "Minute",
             "Sekunde"
           ]
+        },
+        "apps": {
+          "description": "Anwendungen, die auf diesen Datensatz aufbauen. Sind als komma-getrennte Liste von URLs einzutragen.",
+          "type": "string"
         }
       }
     }
