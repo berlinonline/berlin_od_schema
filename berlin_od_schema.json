@@ -141,8 +141,7 @@
     "extras": {
       "type": "object",
       "required": [
-        "date_released",
-        "date_updated"
+        "date_released"
       ],
       "description": "Extras: Zusaetzliche Angaben, die über das Standard CKAN Schema hinausgehen.", 
       "properties": {
