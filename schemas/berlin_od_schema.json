@@ -17,49 +17,59 @@
   "properties": {
     "title": {
       "description": "Titel: Der Titel beschreibt den Datensatz, das Dokument oder die App prägnant und wird z. B. in Suchergebnissen und Listen angezeigt.",
-      "type": "string"
+      "type": "string",
+      "title": "title"
     }, 
     "name": {
       "description": "Name: Ein für Menschen lesbarer Bezeichner des Datensatzes, des Dokuments oder der Apps, der für eine Identifizierung genutzt werden kann (einfache ASCII-Präsentation des Titels, auch für die Pretty-Link-URL, Linked Data URIs)",
       "pattern": "^[a-z0-9_-]{2,}$", 
-      "type": "string"
+      "type": "string",
+      "title": "name"
     }, 
     "type": {
       "description": "Typ: Zeigt an, ob ein Datensatz, ein Dokument, eine App beschrieben wird. Entscheidet darüber, in welchem Bereich diese Metadaten angezeigt werden.", 
       "type": "string", 
-      "enum": ["datensatz", "dokument", "app"]
+      "enum": ["datensatz", "dokument", "app"],
+      "title": "type"
     }, 
     "author": {
       "description": "Veröffentlichende Stelle: Die Behörde, von der die Daten stammen. Bei Apps der App-Hersteller.",
-      "type": "string"
+      "type": "string",
+      "title": "author"
     }, 
     "author_email": {
       "description": "Veröffentlichende Stelle Email: Email-Adresse oder Kontaktformular der Veröffentlichenden Stelle.",
       "format": "uri",
-      "type": "string"
+      "type": "string",
+      "title": "author_email"
     }, 
     "maintainer": {
       "description": "Datenverantwortliche Stelle: Dieser Ansprechpartner kann bei Fragen und Anmerkungen zu den Daten kontaktiert werden.",
-      "type": "string"
+      "type": "string",
+      "title": "maintainer"
     }, 
     "maintainer_email": {
       "description": "Datenverantwortliche Stelle Email: Email-Adresse oder Kontaktformular der Datenverantwortlichen Stelle.",
       "format": "uri",
-      "type": "string"
+      "type": "string",
+      "title": "maintainer_email"
     }, 
     "url": {
       "description": "Website: Die ursprüngliche Webadresse des Datensatzes, Dokuments oder der App, um zu weiteren Informationen über den Datensatz, das Dokument oder die App zu gelangen. Wird auf der Detailseite als Link angezeigt.", 
       "type": "string", 
-      "format": "uri"
+      "format": "uri",
+      "title": "url"
     }, 
     "notes": {
       "description": "Beschreibung: Beschreibung und weitere Informationen zum Datensatz, zum Dokument oder zur App, wird auf der Detailseite dargestellt und kann mehrere Absätze umfassen.",
-      "type": "string"
+      "type": "string",
+      "title": "notes"
     },
     "license_id": {
       "enum": ["cc-by", "cc-by-sa", "cc-nc", "other-closed", "geonutzv"], 
       "type": "string", 
-      "description": "Lizenz-ID: Lizenz aus einer festen Liste, s.u. bzw. <a href='http://datenregister.berlin.de/licenses/berlin-od-portal.json'>http://datenregister.berlin.de/licenses/berlin-od-portal.json</a>"
+      "description": "Lizenz-ID: Lizenz aus einer festen Liste, s.u. bzw. <a href='http://datenregister.berlin.de/licenses/berlin-od-portal.json'>http://datenregister.berlin.de/licenses/berlin-od-portal.json</a>",
+      "title": "license_id"
     },
     "groups": {
       "description": "Kategorien: Kategorien für die Datensätze und Dokumente. Die Kategorien sind statisch und werden vom Portalbetreiber langfristig gepflegt.",
@@ -93,7 +103,8 @@
         ], 
         "type": "string",
         "description": "Liste der vordefinierten Kategorien"
-      } 
+      },
+      "title": "groups"
     },
     "tags": {
       "description": "Schlagwörter: Freie Schlüsselwörter des Datensatzes, des Dokuments oder der App",
@@ -101,7 +112,8 @@
       "items": {
         "type": "string",
         "pattern": "^*$"
-      }
+      },
+      "title": "tags"
     },
     "resources": {
       "description": "Ressourcen: Folgende Felder können für jede Ressource individuell angegeben werden.",
@@ -136,7 +148,8 @@
             "type": "string"
           } 
         }
-      } 
+      },
+      "title": "resources"
     },
     "extras": {
       "type": "object",
@@ -307,7 +320,8 @@
           "description": "Anwendungen, die auf diesen Datensatz aufbauen. Sind als komma-getrennte Liste von URLs einzutragen.",
           "type": "string"
         }
-      }
+      },
+      "title": "extras"
     }
   }
 }
