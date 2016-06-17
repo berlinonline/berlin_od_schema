@@ -233,42 +233,52 @@
       "description": "Kategorien: Kategorien für die Datensätze und Dokumente. Die Kategorien sind statisch und werden vom Portalbetreiber langfristig gepflegt.",
       "type": "array",
       "items": {
-        "enum": [
-          "gesundheit", 
-          "geo", 
-          "transport", 
-          "verkehr", 
-          "jugend", 
-          "verentsorgung", 
-          "demographie", 
-          "sicherheit", 
-          "protokolle", 
-          "wahl", 
-          "erholung", 
-          "wohnen", 
-          "sozial", 
-          "umwelt", 
-          "wirtschaft", 
-          "verwaltung", 
-          "sonstiges", 
-          "oeffentlich", 
-          "kultur", 
-          "justiz", 
-          "verbraucher", 
-          "arbeit", 
-          "bildung", 
-          "tourismus"
-        ], 
-        "type": "string",
-        "description": "Liste der vordefinierten Kategorien"
+        "type": "object",
+        "required": [ "name" ],
+        "properties": {
+          "name": {
+            "enum": [
+              "gesundheit", 
+              "geo", 
+              "transport", 
+              "verkehr", 
+              "jugend", 
+              "verentsorgung", 
+              "demographie", 
+              "sicherheit", 
+              "protokolle", 
+              "wahl", 
+              "erholung", 
+              "wohnen", 
+              "sozial", 
+              "umwelt", 
+              "wirtschaft", 
+              "verwaltung", 
+              "sonstiges", 
+              "oeffentlich", 
+              "kultur", 
+              "justiz", 
+              "verbraucher", 
+              "arbeit", 
+              "bildung", 
+              "tourismus"
+            ], 
+            "type": "string"
+          }
+        }
       }
     },
     "tags": {
       "description": "Schlagwörter: Freie Schlüsselwörter des Datensatzes, des Dokuments oder der App",
       "type": "array",
       "items": {
-        "type": "string",
-        "pattern": "^*$"
+        "type": "object",
+        "required": [ "name" ],
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
       }
     },
     "resources": {
