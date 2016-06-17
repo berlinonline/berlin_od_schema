@@ -1,0 +1,24 @@
+include templates/mixins/indexFolders
+
+doctype html
+head
+  meta(charset='utf-8')
+  include templates/includes/css
+html
+  body.index
+    article
+      header
+        h1 Berlin Open Data Schema
+
+        p
+          | Hier finden Sie Dokumentation zum Berliner Open Data Schema.
+
+      section
+
+      ul
+        li
+          a(href='berlin_od_schema.html')= 'Dokumentation'
+        li
+          a(href='schemas/berlin_od_schema.json')= 'Schema'
+
+      include templates/includes/footer
