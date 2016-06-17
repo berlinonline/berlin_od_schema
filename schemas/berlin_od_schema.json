@@ -26,7 +26,7 @@
       "type": "string",
       "title": "name"
     }, 
-    "type": {
+    "berlin_type": {
       "description": "Typ: Zeigt an, ob ein Datensatz, ein Dokument, eine App beschrieben wird. Entscheidet darüber, in welchem Bereich diese Metadaten angezeigt werden.", 
       "type": "string", 
       "enum": ["datensatz", "dokument", "app"],
