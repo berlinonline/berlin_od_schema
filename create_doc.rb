@@ -15,6 +15,8 @@ class DocCreator < Thor
             content << "<p class='lead'>#{data['description']}</p>"
             # content << "<p>#{config['extended_description']}</p>"
             content << "<dl>"
+            content << "<dt>Hinweise</dt>"
+            content << "<dd>#{config['extended_description']}</dd>"
             content << "<dt>Schema Source</dt>"
             content << "<dd><a href='#{config['schema_path']}'>#{File.basename(config['schema_path'])}</a></dd>"
             content << "<dt>Project Source</dt>"
