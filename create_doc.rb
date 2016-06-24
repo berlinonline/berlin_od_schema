@@ -28,7 +28,7 @@ class DocCreator < Thor
             return content
         end
 
-        def parse_properties(properties, required_properties)
+        def parse_properties(properties, required_properties, parent_property=nil)
             content = []
 
             content << %{
@@ -53,6 +53,7 @@ class DocCreator < Thor
 
             counter = 1
             properties.each_with_index do |(title, item), index|
+                anchor = parent_property ? "#{parent_property}_#{title}" : title
                 required = required_properties.include?(title) ? true : false
                 last = (index == properties.size - 1)
                 type = item["type"]
@@ -67,7 +68,7 @@ class DocCreator < Thor
 
                 content << "<div class='row doc-property #{counter.even? ? "doc-even" : "doc-odd"}#{required ? " doc-required" : ""}#{last ? " doc-footer" : ""}'>"
 
-                content << "<div class='col-md-1 doc-property_title'>#{title}</div>"
+                content << "<div class='col-md-1 doc-property_title'><a id='#{anchor}'>#{title}</a></div>"
                 content << "<div class='col-md-1 doc-property_type'>#{item['type']} (#{cardinality})</div>"
                 content << "<div class='col-md-2 doc-property_type'>#{description}</div>"
 
@@ -76,7 +77,7 @@ class DocCreator < Thor
                 case type
                 when "object"
                     # content << "properties"
-                    content << parse_properties(item['properties'], item['required'])
+                    content << parse_properties(item['properties'], item['required'], anchor)
                 when "string"
                     # content << "string"
                     content << parse_definition(item)
