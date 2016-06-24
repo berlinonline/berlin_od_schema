@@ -68,7 +68,7 @@ class DocCreator < Thor
 
                 content << "<div class='row doc-property #{counter.even? ? "doc-even" : "doc-odd"}#{required ? " doc-required" : ""}#{last ? " doc-footer" : ""}'>"
 
-                content << "<div class='col-md-1 doc-property_title'><a id='#{anchor}'>#{title}</a></div>"
+                content << "<div class='col-md-1 doc-property_title'><a id='#{anchor}' href='\##{anchor}'>#{title}</a></div>"
                 content << "<div class='col-md-1 doc-property_type'>#{item['type']} (#{cardinality})</div>"
                 content << "<div class='col-md-2 doc-property_type'>#{description}</div>"
 
