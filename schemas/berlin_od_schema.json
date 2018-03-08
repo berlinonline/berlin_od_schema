@@ -62,7 +62,17 @@
       "type": "string"
     },
     "license_id": {
-      "enum": ["cc-by", "cc-by-sa", "cc-nc", "other-closed", "geonutzv"], 
+      "enum": [
+        "cc-by",
+        "cc-zero",
+        "cc-by-sa",
+        "cc-nc",
+        "dl-de-2-0",
+        "geonutzv",
+        "geonutz-be-2013-10-01",
+        "odc-odbl",
+        "other-closed"
+      ], 
       "type": "string", 
       "description": "Lizenz-ID: Lizenz aus einer festen Liste, s.u. bzw. <a href='http://datenregister.berlin.de/licenses/berlin-od-portal.json'>http://datenregister.berlin.de/licenses/berlin-od-portal.json</a>"
     },
