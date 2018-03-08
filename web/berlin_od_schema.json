@@ -72,9 +72,13 @@
         "geonutz-be-2013-10-01",
         "odc-odbl",
         "other-closed"
-      ], 
+      ],
       "type": "string", 
       "description": "Lizenz-ID: Lizenz aus einer festen Liste, s.u. bzw. <a href='http://datenregister.berlin.de/licenses/berlin-od-portal.json'>http://datenregister.berlin.de/licenses/berlin-od-portal.json</a>"
+    },
+    "attribution_text": {
+      "description": "Der exakte Text, der im Rahmen der Namensnennung anzugeben ist." ,
+      "type": "string"
     },
     "username": {
       "description": "Veröffentlichende Person: Person, die lediglich für Veröffentlichung zuständig ist.",
