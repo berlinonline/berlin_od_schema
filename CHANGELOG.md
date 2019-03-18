@@ -2,6 +2,10 @@
 
 ## Development
 
+## 2.1
+
+- `apps` property has been removed from the schema. It has never been used for any dataset, does not show up in the Datenregister form and is not shown in the Datenportal. If something like this is needed in the future, Apps should be added as a new type of package with a link to datasets used.
+
 ## 2.0
 
 - Versioning and changelog introduced.
