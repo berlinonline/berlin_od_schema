@@ -2,6 +2,11 @@
 
 ## Development
 
+## 2.2.1
+
+- Automatically populate `properties/license_id` from https://datenregister.berlin.de/licenses/berlin-od-portal.json.
+- Wrap everything in a Makefile.
+
 ## 2.2
 
 - Fix license code and title for DL-DE-Zero-2.0.
