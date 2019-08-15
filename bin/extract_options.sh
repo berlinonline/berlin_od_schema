@@ -5,7 +5,7 @@ extract_options() {
     VALUE_PATH=$2
     OUT_FOLDER=$3
     echo "extracting and writing values for property '$PROP_NAME$VALUE_PATH'"
-    cat schemas/berlin_od_schema.json | \
+    cat temp/berlin_od_schema.json | \
     # no need to grab this remotely - the source is right here locally
     # curl -s https://datenregister.berlin.de/schema/berlin_od_schema.json | \
         jq -r ".properties.$PROP_NAME$VALUE_PATH" | jq -r '.enum as $ids | (.labels // .enum) as $labels | reduce range(0; $labels|length) as $i (""; . + "\($ids[$i])|\($labels[$i])\n" )' | \
