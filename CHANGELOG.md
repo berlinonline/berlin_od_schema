@@ -2,9 +2,16 @@
 
 ## Development
 
+## 2.2.1b
+
+- Fix changelog.
+
 ## 2.2.1
 
-- Automatically populate `properties/license_id` from https://datenregister.berlin.de/licenses/berlin-od-portal.json.
+- Automatically populate `properties/license_id` from https://datenregister.berlin.de/licenses/berlin-od-portal.json. This means GeoNutzV and GeoNutzVBerlin temporarily sneak back in.
+- Base schema template now resides in `templates`.
+- `schemas`, `web` and `options` are derived and therefore removed from the repo.
+- Schema now has a version number and change date (in the schema itself).
 - Wrap everything in a Makefile.
 
 ## 2.2
