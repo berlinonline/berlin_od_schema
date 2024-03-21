@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "$id": "https://datenregister.berlin.de/schema/berlin_od_schema.json",
-  "version": "2.2.1",
-  "dateModified": "2019-08-15",
+  "version": "2.3.0",
+  "dateModified": "2022-12-02",
   "title": "Berlin Open Data Schema",
   "description": "Schema to describe and validate dataset descriptions for the <a href='https://daten.berlin.de'>Berlin Open Data Portal</a>.",
   "type": "object",
@@ -73,26 +73,24 @@
     "license_id": {
       "enum": [
         "cc-by",
+        "cc-by/4.0",
         "cc-zero",
         "cc-by-sa",
         "cc-by-nc",
         "dl-de-zero-2.0",
         "dl-de-by-2.0",
-        "geonutzv",
-        "geonutz-be-2013-10-01",
         "odc-odbl",
         "other-closed"
       ],
       "labels": [
         "Creative Commons Attribution",
+        "Creative Commons Attribution 4.0",
         "Creative Commons Zero",
         "Creative Commons Attribution Share-Alike",
         "Creative Commons Non-Commercial (Any)",
         "Datenlizenz Deutschland – Zero – Version 2.0",
         "Datenlizenz Deutschland – Namensnennung – Version 2.0",
-        "GeoNutzV",
-        "GeoNutzV-Berlin",
-        "Open Data Commons Open Database License (ODbL)",
+        "Open Data Commons Open Database License",
         "Siehe Website des Datensatzes"
       ],
       "type": "string",

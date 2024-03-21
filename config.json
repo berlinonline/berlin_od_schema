@@ -1,5 +1,5 @@
 {
-    "schema_path": "berlin_od_schema.json" ,
-    "source": "https://github.com/knudmoeller/berlin_od_schema" ,
-    "extended_description": "Die Dokumentation bezieht sich auf die <a href='http://docs.ckan.org/en/ckan-2.4.3/api/index.html'>CKAN API v3</a>."
+    "schema_path": "berlin_od_schema.json",
+    "source": "https://github.com/knudmoeller/berlin_od_schema",
+    "extended_description": "Die Dokumentation bezieht sich auf die <a href='https://docs.ckan.org/en/2.9/api/index.html'>CKAN Action API</a>."
 }
